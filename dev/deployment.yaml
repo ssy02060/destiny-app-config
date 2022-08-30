@@ -17,3 +17,6 @@ spec:
       containers:
       - name: gateway
         image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/gateway:10
+        env:
+          - name: PORT
+          - value: 80
