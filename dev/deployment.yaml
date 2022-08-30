@@ -6,7 +6,6 @@ spec:
   selector:
     matchLabels:
       app: destiny
-      pod: gateway
   replicas: 2
   template:
     metadata:
