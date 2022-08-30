@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: destiny
+  name: gateway
 spec:
   selector:
     matchLabels:
-      app: destiny
+      app: gateway
   replicas: 2
   template:
     metadata:
       labels:
-        app: destiny
+        app: gateway
     spec:
       containers:
       - name: gateway
         image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/gateway:10
         ports:
         - containerPort: 80
-    
+      env:
+        - name: PORT
+          value: "80"
