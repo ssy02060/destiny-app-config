@@ -15,7 +15,7 @@ spec:
     namespace: destiny
   
   syncPolicy:
-    syncOpstions:
+    syncOptions:
     - CreateNamespace=true
     # automaticly sync
     automated:
