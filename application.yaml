@@ -10,7 +10,7 @@ spec:
     repoURL: https://github.com/ssy02060/destiny-app-config.git
     targetRevision: HEAD
     path: dev
-  destionation:
+  destination:
     server: https://kubernetes.default.svc
     namespace: destiny
   
