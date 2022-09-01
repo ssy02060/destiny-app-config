@@ -1,4 +1,3 @@
-variable "app_version" {}
 variable "service_name" {}
 
 variable "dns_name" {
@@ -15,15 +14,6 @@ variable "service_type" {
 
 variable "session_affinity" {
   default = ""
-}
-
-variable "env" {
-  default = {}
-  type    = map(string)
-}
-
-locals {
-  image_tag = "${aws_ecr_repository.repo.repository_url}:${var.app_version}"
 }
 
 resource "aws_ecr_repository" "repo" {

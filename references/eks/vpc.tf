@@ -1,6 +1,4 @@
-locals {
-  cluster_name = "dstny-cluster"
-}
+
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"

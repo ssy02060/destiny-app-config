@@ -1,3 +1,7 @@
+locals {
+  cluster_name = "dstny-cluster"
+}
+
 module "eks" {
   source = "terraform-aws-modules/eks/aws"
 
@@ -23,13 +27,19 @@ module "eks" {
 
   fargate_profiles = {
     default = {
-      name = "default"
+      name = "dstny-fargate"
       selectors = [
         {
           namespace = "kube-system"
         },
         {
           namespace = "default"
+        },
+        {
+          namespace = "argocd"
+        },
+        {
+          namespace = "destiny"
         }
       ]
     }
