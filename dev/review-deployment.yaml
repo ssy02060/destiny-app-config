@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: destiny
+spec:
+  selector:
+    matchLabels:
+      app: destiny
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: destiny
+    spec:
+      containers:
+      - name: review
+        image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/review:33
+        ports:
+        - containerPort: 80
+        env:
+          - name: PORT
+            value: "80"
